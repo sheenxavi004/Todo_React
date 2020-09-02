@@ -23,7 +23,7 @@ function TodoForm({addTodo}) {
     setValue('')
   }
   return(
-    <form className="form row" onSubmit={handleSubmit}>
+    <form className="row justify-content-between" onSubmit={handleSubmit}>
       <input className="todoForm col-12" type="text" placeholder="Add a Todo" value={value} onChange={e => setValue(e.target.value)} />
     </form>
   )
@@ -47,12 +47,12 @@ function App() {
   return (
     <div className="App">
       <div className="container">
-      <h1 className="row">Todo</h1>
+        <h1 className="row">Todo</h1>
         <TodoForm addTodo={addTodo} />
-        {todos.map((todo, index) => (
-          <Todo key={index} index={index} todo={todo} removeTodo={removeTodo}/>
+          {todos.map((todo, index) => (
+            <Todo key={index} index={index} todo={todo} removeTodo={removeTodo}/>
         ))}
-      </div>
+        </div>
     </div>
   );
 }
